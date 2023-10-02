@@ -1,4 +1,10 @@
 ---
+import '@fontsource/poppins/400.css';
+import '@fontsource/poppins/500.css';
+import '@fontsource/poppins/600.css';
+
+import Logo from './components/Logo.astro'
+
 interface Props {
 	title: string;
 }
@@ -10,42 +16,122 @@ const { title } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content="Commune is a World of Warcraft guild." />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<header>
+			<Logo />
+			<h1>COMMUNE GUILD</h1>
+			<Logo />
+		</header>
+		<nav>
+			<a href="/about/">ABOUT</a>
+			<a href="/gallery/">GALLERY</a>
+			<a href="/join/">JOIN US</a>
+			<a href="/about/">ABOUT</a>
+			<a href="/gallery/">GALLERY</a>
+			<a href="/join/">JOIN US</a>
+			<a href="/about/">ABOUT</a>
+			<a href="/gallery/">GALLERY</a>
+			<a href="/join/">JOIN US</a>
+			<a href="/about/">ABOUT</a>
+			<a href="/gallery/">GALLERY</a>
+			<a href="/join/">JOIN US</a>
+			<a href="/about/">ABOUT</a>
+			<a href="/gallery/">GALLERY</a>
+			<a href="/join/">JOIN US</a>
+			<a href="/about/">ABOUT</a>
+			<a href="/gallery/">GALLERY</a>
+			<a href="/join/">JOIN US</a>
+			<a href="/about/">ABOUT</a>
+			<a href="/gallery/">GALLERY</a>
+			<a href="/join/">JOIN US</a>
+		</nav>
+		<main>
+			<slot />
+		</main>
 	</body>
 </html>
+
 <style is:global>
+	*, *::before, *::after {
+		box-sizing: border-box;
+	}
+	* {
+		margin: 0;
+	}
+	body {
+		line-height: 1.5;
+		-webkit-font-smoothing: antialiased;
+	}
+	img, picture, video, canvas, svg {
+		display: block;
+		max-width: 100%;
+	}
+	input, button, textarea, select {
+		font: inherit;
+	}
+	p, h1, h2, h3, h4, h5, h6 {
+		overflow-wrap: break-word;
+	}
+	#root, #__next {
+		isolation: isolate;
+	}
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+		--white: 255, 255, 255;
+		--black: 0, 0, 0;
+		--accent-light: 248, 230, 254;
+		--accent: 241, 198, 255;
+		--accent-dark: 191, 0, 254;
+	}
+	h1 {
+		font-size: 80px;
+		text-decoration: underline;
+		font-weight: 600;
+		margin: 0;
+    color: rgb(var(--accent-dark))
 	}
 	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
+		font-family: 'Poppins', sans-serif;
+		background: rgb(var(--white));
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+	header {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 50px 60px
+	}
+	nav {
+		overflow: hidden;
+		width: 100%;
+		border-top: 2px solid rgb(var(--accent-dark));
+		border-bottom: 2px solid rgb(var(--accent-dark));
+		column-gap: 48px;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		padding: 12px 0px;
+	}
+	nav a {
+		white-space: nowrap;
+		text-decoration: none;
+		color: rgb(var(--accent-dark));
+		font-weight: 500;
+	}
+	nav a:hover {
+		text-decoration: underline;
+	}
+	li {
+		list-style: none;
+		margin: 0;
+		padding: 0;
 	}
 </style>

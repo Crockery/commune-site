@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "commune-site",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,6 +10,12 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@fontsource/poppins": "^5.0.8",
     "astro": "^3.2.2"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^6.7.4",
+    "eslint": "^8.50.0",
+    "eslint-plugin-astro": "^0.29.1"
   }
 }
