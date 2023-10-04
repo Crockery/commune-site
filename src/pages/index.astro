@@ -1,58 +1,125 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Murlock from './components/Murlock.astro'
 ---
 
 <Layout title="Commune WoW Guild">
-	<div class="marquee">
-		<ul class="marquee__content">
-			<li>THE SWORD IS STILL IN THERE, IS SOMEONE GOING TO REMOVE IT? WHAT IF NO ONE DOES? DOES NO ONE REMEMBER THAT ITS THERE? WHAT IF NO ONE REMEMBERS THAT IM HERE, LIKE THAT SWORD? WHAT IF WE'RE ALL THE SWORD?</li>
-		</ul>
-		<ul class="marquee__content" aria-hidden="true">
-			<li>THE SWORD IS STILL IN THERE, IS SOMEONE GOING TO REMOVE IT? WHAT IF NO ONE DOES? DOES NO ONE REMEMBER THAT ITS THERE? WHAT IF NO ONE REMEMBERS THAT IM HERE, LIKE THAT SWORD? WHAT IF WE'RE ALL THE SWORD?</li>
-		</ul>
-	</div>
+	<article class="section-wrapper">
+		<aside>
+			<Murlock />
+			<div
+				class="blurb"
+			>
+				<h2>
+					YOU DON'T HAVE TO PLAY WITH RUDE PEOPLE
+				</h2>
+			</div>
+
+		</aside>
+		<section>
+			<h4>
+				Our Guild
+			</h4>
+		</section>
+	</article>
 </Layout>
 
 <style>
-	@keyframes scroll {
-		from {
-			transform: translateX(0);
-		}
-		to {
-			transform: translateX(calc(-100% - var(--gap)));
-		}
-	}
-
-	.marquee {
-		--gap: 8px;
-		position: relative;
-		padding-top: 40px;
-		padding-bottom: 40px;
+	article {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
 		align-items: flex-start;
-		display: flex;
-		overflow: hidden;
-		user-select: none;
-		gap: var(--gap);
+		height: calc(100vh - (var(--header-height) + var(--marquee-height)));
+		justify-content: flex-start;
+		padding-bottom: 52px;
+		padding-top: 52px;
 	}
 
-	.marquee__content {
-		flex-shrink: 0;
+	section {
 		display: flex;
-		justify-content: space-around;
-		gap: var(--gap);
-		min-width: 100%;
-		animation: scroll 30s linear infinite;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		border: 5px solid rgb(var(--accent-dark));
+		background-color: rgb(var(--accent));
+		width: 420px;
+		height: 100%;
+		margin: 0px 52px;
 	}
 
-	.marquee__content li {
-		font-size: 60px;
+	section h4 {
+		height: 54px;
+		display: flex;
+		font-size: 32px;
+		border-bottom: 5px solid rgb(var(--accent-dark));
+		align-items: center;
+		justify-content: center;
+		color: rgb(var(--accent-dark));
+		background-color: rgb(var(--accent-light));
+		width: 100%;
+	}
+
+	aside {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		position: sticky;
+		top: var(--height-offset);
+		height: 100%;
+		flex: 1;
+	}
+
+	.blurb {
+		padding-top: 36px;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.blurb h2 {
 		color: rgb(var(--accent-dark));
 		font-weight: 400;
+		width: 100%;
+		max-width: 500px;
+		text-align: center;
+		font-size: 52px;
+		line-height: 60px;
+		border-top: 5px solid rgb(var(--accent-dark));
+		border-bottom: 5px solid rgb(var(--accent-dark));
+		padding: 12px 0px;
 	}
 
-	@media (prefers-reduced-motion: reduce) {
-		.marquee__content {
-			animation-play-state: paused !important;
+	@media screen and (max-width: 1200px) {
+		article {
+			padding-bottom: 40px;
+			padding-top: 40px;
+		}
+		section {
+			margin: 0px 40px;
+		}
+  }
+  @media screen and (max-width: 900px) {
+		section {
+			margin: 0px 32px;
+		}
+		section, section h4 {
+			border-width: 3px;
+		}
+		article {
+			padding-bottom: 32px;
+			padding-top: 32px;
+		}
+	}
+  @media screen and (max-width: 500px) {
+		section {
+			margin: 0px 24px;
+		}
+		article {
+			padding-bottom: 24px;
+			padding-top: 24px;
 		}
 	}
 </style>

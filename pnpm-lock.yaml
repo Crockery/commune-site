@@ -13,6 +13,9 @@ dependencies:
     version: registry.npmjs.org/astro@3.2.2
 
 devDependencies:
+  '@rollup/plugin-image':
+    specifier: ^3.0.2
+    version: registry.npmjs.org/@rollup/plugin-image@3.0.2
   '@typescript-eslint/parser':
     specifier: ^6.7.4
     version: registry.npmjs.org/@typescript-eslint/parser@6.7.4(eslint@8.50.0)(typescript@5.2.2)
@@ -1033,6 +1036,37 @@ packages:
       tslib: registry.npmjs.org/tslib@2.6.2
     dev: true
 
+  registry.npmjs.org/@rollup/plugin-image@3.0.2:
+    resolution: {integrity: sha512-eGVrD6lummWH5ENo9LWX3JY62uBb9okUNQ2htXkugrG6WjACrMUVhWvss+0wW3fwJWmFYpoEny3yL4spEdh15g==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@rollup/plugin-image/-/plugin-image-3.0.2.tgz}
+    name: '@rollup/plugin-image'
+    version: 3.0.2
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      '@rollup/pluginutils': registry.npmjs.org/@rollup/pluginutils@5.0.4
+      mini-svg-data-uri: registry.npmjs.org/mini-svg-data-uri@1.4.4
+    dev: true
+
+  registry.npmjs.org/@rollup/pluginutils@5.0.4:
+    resolution: {integrity: sha512-0KJnIoRI8A+a1dqOYLxH8vBf8bphDmty5QvIm2hqm7oFCFYKCAZWWd2hXgMibaPsNDhI0AtpYfQZJG47pt/k4g==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@rollup/pluginutils/-/pluginutils-5.0.4.tgz}
+    name: '@rollup/pluginutils'
+    version: 5.0.4
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      '@types/estree': registry.npmjs.org/@types/estree@1.0.2
+      estree-walker: registry.npmjs.org/estree-walker@2.0.2
+      picomatch: registry.npmjs.org/picomatch@2.3.1
+    dev: true
+
   registry.npmjs.org/@types/babel__core@7.20.2:
     resolution: {integrity: sha512-pNpr1T1xLUc2l3xJKuPtsEky3ybxN3m4fJkknfIpTCTfIZCDW57oAg+EfCgIIp2rvCe0Wn++/FfodDS4YXxBwA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@types/babel__core/-/babel__core-7.20.2.tgz}
     name: '@types/babel__core'
@@ -1082,7 +1116,6 @@ packages:
     resolution: {integrity: sha512-VeiPZ9MMwXjO32/Xu7+OwflfmeoRwkE/qzndw42gGtgJwZopBnzy2gD//NN1+go1mADzkDcqf/KnFRSjTJ8xJA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@types/estree/-/estree-1.0.2.tgz}
     name: '@types/estree'
     version: 1.0.2
-    dev: false
 
   registry.npmjs.org/@types/hast@2.3.6:
     resolution: {integrity: sha512-47rJE80oqPmFdVDCD7IheXBrVdwuBgsYwoczFvKmwfo2Mzsnt+V9OONsYauFmICb6lQPpCuXYJWejBNs4pDJRg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@types/hast/-/hast-2.3.6.tgz}
@@ -2286,6 +2319,12 @@ packages:
     name: estraverse
     version: 5.3.0
     engines: {node: '>=4.0'}
+    dev: true
+
+  registry.npmjs.org/estree-walker@2.0.2:
+    resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/estree-walker/-/estree-walker-2.0.2.tgz}
+    name: estree-walker
+    version: 2.0.2
     dev: true
 
   registry.npmjs.org/estree-walker@3.0.3:
@@ -3708,6 +3747,13 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  registry.npmjs.org/mini-svg-data-uri@1.4.4:
+    resolution: {integrity: sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/mini-svg-data-uri/-/mini-svg-data-uri-1.4.4.tgz}
+    name: mini-svg-data-uri
+    version: 1.4.4
+    hasBin: true
+    dev: true
 
   registry.npmjs.org/minimatch@3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/minimatch/-/minimatch-3.1.2.tgz}

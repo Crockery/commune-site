@@ -14,6 +14,7 @@
     "astro": "^3.2.2"
   },
   "devDependencies": {
+    "@rollup/plugin-image": "^3.0.2",
     "@typescript-eslint/parser": "^6.7.4",
     "eslint": "^8.50.0",
     "eslint-plugin-astro": "^0.29.1"
