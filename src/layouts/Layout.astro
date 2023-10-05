@@ -31,6 +31,11 @@ const { title } = Astro.props;
 			<h1>COMMUNE</h1>
 			<Logo />
 		</header>
+		<nav>
+			<a href="https://discord.gg/zqJpYKDj86" target="_blank">JOIN US</a>
+			<a href="https://www.warcraftlogs.com/guild/us/wyrmrest-accord/commune" target="_blank">LOGS</a>
+			<a href="https://worldofwarcraft.blizzard.com/en-us/guild/us/wyrmrest-accord/commune" target="_blank">PROFILE</a>
+		</nav>
 		<main>
 			<div class="marquee">
 				<ul class="marquee-content">
@@ -72,8 +77,11 @@ const { title } = Astro.props;
 		--accent-light: 248, 230, 254;
 		--accent: 241, 198, 255;
 		--accent-dark: 191, 0, 254;
-		--header-height: 220px;
+		--header-height: 282px;
+		--nav-height: 62px;
 		--marquee-height: 140px;
+		--border-width-thick: 5px;
+		--border-width: 3px;
 	}
 	h1 {
 		font-size: 80px;
@@ -116,6 +124,27 @@ const { title } = Astro.props;
 		}
 	}
 
+	nav {
+		height: var(--nav-height);
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		border-top: var(--border-width) solid rgb(var(--accent-dark));
+		border-bottom: var(--border-width) solid rgb(var(--accent-dark));
+	}
+
+	nav a {
+		font-size: 18px;
+		font-weight: 600;
+		text-decoration: none;
+		color: rgb(var(--accent-dark));
+	}
+
+	nav a:hover {
+		text-decoration: underline;
+	}
+
 	.marquee {
 		--gap: 8px;
 		position: relative;
@@ -125,8 +154,6 @@ const { title } = Astro.props;
 		overflow: hidden;
 		user-select: none;
 		gap: var(--gap);
-		border-top: 5px solid rgb(var(--accent-dark));
-		border-bottom: 5px solid rgb(var(--accent-dark));
 	}
 
 	.marquee-content {
@@ -165,7 +192,7 @@ const { title } = Astro.props;
 			padding: 0px 50px
 		}
 	}
-	@media screen and (max-width: 900px) {
+	@media screen and (max-width: 940px) {
 		.marquee {
 			border-top-width: 3px;
 			border-bottom-width: 3px;
@@ -177,12 +204,19 @@ const { title } = Astro.props;
 		:root {
 			--header-height: 108px;
 			--marquee-height: 80px;
+			--nav-height: 54px;
+			--border-width-thick: 4px;
+			--border-width: 2px;
 		}
 		h1 {
 			font-size: 40px;
 		}
 		header {
 			padding: 0px 32px
+		}
+
+		nav a {
+			font-size: 16px;
 		}
 	}
 	@media screen and (max-width: 500px) {
@@ -192,6 +226,9 @@ const { title } = Astro.props;
 		:root {
 			--header-height: 84px;
 			--marquee-height: 60px;
+			--border-width-thick: 3px;
+			--border-width: 1px;
+			--nav-height: 40px;
 		}
 		h1 {
 			font-size: 32px;
@@ -199,6 +236,9 @@ const { title } = Astro.props;
 		}
 		header {
 			padding: 0px 24px
+		}
+		nav a {
+			font-size: 14px;
 		}
 	}
 </style>

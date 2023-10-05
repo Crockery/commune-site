@@ -1,10 +1,37 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Murlock from './components/Murlock.astro'
+import Murlock from '../components/Murlock.astro'
 ---
 
 <Layout title="Commune WoW Guild">
 	<article class="section-wrapper">
+		<section class="our-guild">
+			<h4>
+				Our Guild
+			</h4>
+			<div
+				class="guild-description"
+			>
+				<div class="description-outer">
+					<p>
+						We are a Cross Faction Horde guild on <strong>Wyrmrest Accord</strong>! We're a vibrant community of gamers with the shared goal of creating a relaxed and inclusive space for leftists to enjoy World of Warcraft together. Almost all of us are anarchists, communists, socialists, or followers of related left political tendencies. Most of us are LGBTQIA+, and we strive to maintain an environment where our queerness is not only accepted but celebrated.
+					</p>
+					<p>
+						- We raid Thurs. & Mon. 8:30-10:30PM EST, and have cleared AOTC every tier since we started.</li>
+					</p>
+					<p>
+						- We have a "relaxed" (usually Normal difficuly) raid on Sunday, 8-10PM EST</li>
+					</p>
+					<p>
+						- We have a very active M+ community, with many of our players having achieved KSM, and portals this season.</li>
+					</p>
+					<p>
+						- We have semi-regular in-game get togethers with music, dancing, and tons of fun!</li>
+					</p>
+				</div>
+			</div>
+
+		</section>
 		<aside>
 			<Murlock />
 			<div
@@ -16,10 +43,20 @@ import Murlock from './components/Murlock.astro'
 			</div>
 
 		</aside>
-		<section>
-			<h4>
-				Our Guild
-			</h4>
+		<section class="latest-news">
+			<h5>
+				DREAMING ABOUT GUARDIANS OF THE DREAM
+			</h5>
+			<p>Oct 5, 2023</p>
+			<p>
+				With AOTC done, and the season winding down, a lot of the guild has been taking the opportunity to enjoy games and hobbies outside of World of Warcraft.
+			</p>
+			<p>
+				While we do have our eyes firmly set on the news, eagerly anticipating the upcoming patch's release date announcement so we can begin organizing our raid groups in earnest, I think we're all appreciating the break from what has felt like a rather long season.
+			</p>
+			<p>
+				So while we can't promise a particularly active raiding on M+ scene at the moment (although they do still exist), the vibes are -- as always -- incredible.
+			</p>
 		</section>
 	</article>
 </Layout>
@@ -30,10 +67,9 @@ import Murlock from './components/Murlock.astro'
 		display: flex;
 		flex-direction: row;
 		align-items: flex-start;
-		height: calc(100vh - (var(--header-height) + var(--marquee-height)));
+		height: calc(100dvh - (var(--header-height) + var(--marquee-height) + var(--nav-height)));
 		justify-content: flex-start;
 		padding-bottom: 52px;
-		padding-top: 52px;
 	}
 
 	section {
@@ -41,11 +77,62 @@ import Murlock from './components/Murlock.astro'
 		flex-direction: column;
 		justify-content: flex-start;
 		align-items: flex-start;
-		border: 5px solid rgb(var(--accent-dark));
-		background-color: rgb(var(--accent));
+		border: var(--border-width-thick) solid rgb(var(--accent-dark));
 		width: 420px;
 		height: 100%;
 		margin: 0px 52px;
+		flex-shrink: 0;
+	}
+
+	section.our-guild {
+		container: ourguild / size;
+		background-color: rgb(var(--accent));
+		border: var(--border-width-thick) solid rgb(var(--accent-dark));
+		color:	rgb(var(--accent-dark));
+	}
+
+	.guild-description {
+		width: 100%;
+		height: 100%;
+		padding: 16px;
+		font-size: 2.2cqh;
+		font-weight: 400;
+		line-height: 1.3;
+	}
+
+	.description-outer {
+		width: 100%;
+		height: 100%;
+		border: var(--border-width-thick) solid rgb(var(--accent-dark));
+		padding: 16px;
+		background-color: white;
+	}
+
+	.description-outer p {
+		padding-bottom: 12px;
+	}
+
+	section.latest-news {
+		border: var(--border-width) solid rgb(var(--accent-dark));
+		padding: 20px;
+	}
+
+	.latest-news h5 {
+		font-size: 36px;
+		color: rgb(var(--accent-dark));
+		font-weight: 400;
+		padding-bottom: 24px;
+		line-height: 1.2;
+		text-align: center;
+		text-decoration: underline;
+	}
+
+	.latest-news p {
+		font-size: 16px;
+		font-weight: 400;
+		padding-bottom: 16px;
+		line-height: 1.6;
+		color: rgb(var(--accent-dark));
 	}
 
 	section h4 {
@@ -65,10 +152,9 @@ import Murlock from './components/Murlock.astro'
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		position: sticky;
-		top: var(--height-offset);
 		height: 100%;
 		flex: 1;
+		flex-shrink: 0;
 	}
 
 	.blurb {
@@ -99,18 +185,42 @@ import Murlock from './components/Murlock.astro'
 		}
 		section {
 			margin: 0px 40px;
+			width: 300px;
+		}
+		.guild-description {
+			font-size: 5.2cqw;
 		}
   }
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 940px) {
 		section {
 			margin: 0px 32px;
+			width: 100%;
+			height: auto;
 		}
-		section, section h4 {
-			border-width: 3px;
+
+		section.our-guild {
+			container: none;
 		}
+
+		.guild-description {
+			height: auto;
+			font-size: 14px;
+		}
+
 		article {
+			padding-left: 20px;
+			padding-right: 20px;
+			padding-top: 0px;
+			overflow: auto;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-start;
 			padding-bottom: 32px;
-			padding-top: 32px;
+		}
+
+		aside {
+			width: 100%;
+			height: 600px;
 		}
 	}
   @media screen and (max-width: 500px) {
