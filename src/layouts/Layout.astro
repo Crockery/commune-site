@@ -101,6 +101,10 @@ const { title } = Astro.props;
 		align-items: center;
 		justify-content: space-between;
 		padding: 0px 60px;
+		position: sticky;
+		top: 0;
+		z-index: 4;
+		background-color: white;
 	}
 	li {
 		list-style: none;
@@ -132,6 +136,10 @@ const { title } = Astro.props;
 		justify-content: space-around;
 		border-top: var(--border-width) solid rgb(var(--accent-dark));
 		border-bottom: var(--border-width) solid rgb(var(--accent-dark));
+		position: sticky;
+		top: var(--header-height);
+		z-index: 4;
+		background-color: white;
 	}
 
 	nav a {
@@ -193,14 +201,6 @@ const { title } = Astro.props;
 		}
 	}
 	@media screen and (max-width: 940px) {
-		.marquee {
-			border-top-width: 3px;
-			border-bottom-width: 3px;
-
-		}
-		.marquee-content li {
-			font-size: 36px;
-		}
 		:root {
 			--header-height: 108px;
 			--marquee-height: 80px;
@@ -208,31 +208,33 @@ const { title } = Astro.props;
 			--border-width-thick: 4px;
 			--border-width: 2px;
 		}
+		.marquee {
+			border-top-width: 3px;
+			border-bottom-width: 3px;
+		}
+		.marquee-content li {
+			font-size: 36px;
+		}
 		h1 {
 			font-size: 40px;
 		}
 		header {
 			padding: 0px 32px;
-			position: sticky;
-			top: 0;
-			background-color: white;
-			z-index: 4;
 		}
-
 		nav a {
 			font-size: 16px;
 		}
 	}
 	@media screen and (max-width: 500px) {
-		.marquee-content li {
-			font-size: 28px;
-		}
 		:root {
 			--header-height: 84px;
 			--marquee-height: 68px;
 			--border-width-thick: 3px;
 			--border-width: 1px;
 			--nav-height: 40px;
+		}
+		.marquee-content li {
+			font-size: 28px;
 		}
 		h1 {
 			font-size: 32px;
