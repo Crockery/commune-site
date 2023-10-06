@@ -4,13 +4,13 @@ import Murlock from '../components/Murlock.astro'
 ---
 
 <Layout title="Commune WoW Guild">
-	<article class="section-wrapper">
-		<section class="our-guild">
+	<article class="home-page">
+		<section class="guild-info">
 			<h4>
-				Our Guild
+				OUR GUILD
 			</h4>
 			<div
-				class="guild-description"
+				class="description"
 			>
 				<div class="description-outer">
 					<p>
@@ -32,7 +32,7 @@ import Murlock from '../components/Murlock.astro'
 			</div>
 
 		</section>
-		<aside>
+		<aside class="murlock">
 			<Murlock />
 			<div
 				class="blurb"
@@ -43,7 +43,7 @@ import Murlock from '../components/Murlock.astro'
 			</div>
 
 		</aside>
-		<section class="latest-news">
+		<section class="guild-news">
 			<h5>
 				DREAMING ABOUT GUARDIANS OF THE DREAM
 			</h5>
@@ -62,7 +62,7 @@ import Murlock from '../components/Murlock.astro'
 </Layout>
 
 <style>
-	article {
+	.home-page {
 		width: 100%;
 		display: flex;
 		flex-direction: row;
@@ -72,7 +72,7 @@ import Murlock from '../components/Murlock.astro'
 		padding-bottom: 52px;
 	}
 
-	section {
+	.guild-info, .guild-news {
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
@@ -84,14 +84,26 @@ import Murlock from '../components/Murlock.astro'
 		flex-shrink: 0;
 	}
 
-	section.our-guild {
+	.guild-info {
 		container: ourguild / size;
 		background-color: rgb(var(--accent));
 		border: var(--border-width-thick) solid rgb(var(--accent-dark));
 		color:	rgb(var(--accent-dark));
 	}
 
-	.guild-description {
+	.guild-info h4 {
+		height: 54px;
+		display: flex;
+		font-size: 36px;
+		border-bottom: 5px solid rgb(var(--accent-dark));
+		align-items: center;
+		justify-content: center;
+		color: rgb(var(--accent-dark));
+		background-color: rgb(var(--accent-light));
+		width: 100%;
+	}
+
+	.description {
 		width: 100%;
 		height: 100%;
 		padding: 16px;
@@ -112,12 +124,12 @@ import Murlock from '../components/Murlock.astro'
 		padding-bottom: 12px;
 	}
 
-	section.latest-news {
+	.guild-news {
 		border: var(--border-width) solid rgb(var(--accent-dark));
 		padding: 20px;
 	}
 
-	.latest-news h5 {
+	.guild-news h5 {
 		font-size: 36px;
 		color: rgb(var(--accent-dark));
 		font-weight: 400;
@@ -127,7 +139,7 @@ import Murlock from '../components/Murlock.astro'
 		text-decoration: underline;
 	}
 
-	.latest-news p {
+	.guild-news p {
 		font-size: 16px;
 		font-weight: 400;
 		padding-bottom: 16px;
@@ -135,19 +147,7 @@ import Murlock from '../components/Murlock.astro'
 		color: rgb(var(--accent-dark));
 	}
 
-	section h4 {
-		height: 54px;
-		display: flex;
-		font-size: 32px;
-		border-bottom: 5px solid rgb(var(--accent-dark));
-		align-items: center;
-		justify-content: center;
-		color: rgb(var(--accent-dark));
-		background-color: rgb(var(--accent-light));
-		width: 100%;
-	}
-
-	aside {
+	.murlock {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -179,57 +179,73 @@ import Murlock from '../components/Murlock.astro'
 	}
 
 	@media screen and (max-width: 1200px) {
-		article {
-			padding-bottom: 40px;
-			padding-top: 40px;
+		.home-page {
+			padding-bottom: 44px;
+			padding-top: 44px;
 		}
-		section {
-			margin: 0px 40px;
+		.guild-info, .guild-news  {
+			margin: 0px 44px;
 			width: 300px;
 		}
-		.guild-description {
+		.description {
 			font-size: 5.2cqw;
 		}
   }
   @media screen and (max-width: 940px) {
-		section {
-			margin: 0px 32px;
+		.home-page {
+			padding-left: 44px;
+			padding-right: 44px;
+			padding-top: 0px;
+			height: auto;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-start;
+		}
+		.guild-info, .guild-news  {
+			margin: 0px;
 			width: 100%;
 			height: auto;
 		}
 
-		section.our-guild {
+		.guild-info {
 			container: none;
 		}
 
-		.guild-description {
+		.blurb h2 {
+			font-size: 44px;
+			line-height: 48px;
+		}
+
+		.description {
 			height: auto;
 			font-size: 14px;
 		}
 
-		article {
-			padding-left: 20px;
-			padding-right: 20px;
-			padding-top: 0px;
-			overflow: auto;
-			flex-direction: column;
-			align-items: center;
-			justify-content: flex-start;
-			padding-bottom: 32px;
+		.guild-news p {
+			font-size: 14px;
 		}
 
-		aside {
+		.murlock {
 			width: 100%;
 			height: 600px;
+			flex-grow: unset;
+			flex-basis: unset;
+			margin: 44px 0px;
 		}
 	}
   @media screen and (max-width: 500px) {
-		section {
-			margin: 0px 24px;
+		.home-page {
+			padding: 0px 32px 32px 32px;
 		}
-		article {
-			padding-bottom: 24px;
-			padding-top: 24px;
+		.blurb h2 {
+			font-size: 36px;
+			line-height: 40px;
+		}
+		.guild-info h4 {
+			font-size: 28px;
+		}
+		.guild-news h5 {
+			font-size: 28px;
 		}
 	}
 </style>
