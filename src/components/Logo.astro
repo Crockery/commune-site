@@ -3,7 +3,7 @@
     <defs>
       <pattern id="New_Pattern_Swatch_3" data-name="New Pattern Swatch 3" width="129.11" height="101.79" patternTransform="translate(717.97 -45.8)" patternUnits="userSpaceOnUse" viewBox="0 0 129.11 101.79">
         <rect width="129.11" height="101.79" fill="none"/>
-        <rect width="129.11" height="101.79" fill="#bf00fe"/>
+        <rect class="fill-rect" width="129.11" height="101.79" />
       </pattern>
     </defs>
     <title>logo-icon</title>
@@ -19,6 +19,10 @@
     100% {
       transform: rotate(360deg);
     }
+  }
+
+  .fill-rect {
+    fill: rgb(var(--accent-dark));
   }
   .logo-wrapper {
     display: flex;

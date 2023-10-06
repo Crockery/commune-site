@@ -3,7 +3,8 @@ import '@fontsource/poppins/400.css';
 import '@fontsource/poppins/500.css';
 import '@fontsource/poppins/600.css';
 
-import Logo from './components/Logo.astro'
+import Logo from '../components/Logo.astro'
+import ThemeToggle from '../components/ThemeToggle.astro';
 
 interface Props {
 	title: string;
@@ -27,6 +28,9 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<header>
+			<div class="theme-toggle">
+				<ThemeToggle />
+			</div>
 			<Logo />
 			<h1>COMMUNE</h1>
 			<Logo />
@@ -83,6 +87,13 @@ const { title } = Astro.props;
 		--border-width-thick: 5px;
 		--border-width: 3px;
 	}
+
+	html.dark {
+		--accent-light: 31, 0, 41;
+		--accent: 107, 0, 143;
+		--accent-dark: 222, 137, 250;
+	}
+
 	h1 {
 		font-size: 80px;
 		text-decoration: underline;
@@ -93,6 +104,7 @@ const { title } = Astro.props;
 	html {
 		font-family: 'Poppins', sans-serif;
 		background-color: rgb(var(--accent-light));
+		transition: background 0.2s ease-in-out;
 	}
 	header {
 		width: 100%;
@@ -102,8 +114,18 @@ const { title } = Astro.props;
 		justify-content: space-between;
 		padding: 0px 60px;
 		z-index: 4;
+		position: relative;
 		background-color: rgb(var(--accent-light));
+		transition: background 0.2s ease-in-out;
 	}
+
+	.theme-toggle {
+		position: absolute;
+		right: 16px;
+		top: 16px;
+		z-index: 3;
+	}
+
 	li {
 		list-style: none;
 		margin: 0;
@@ -138,6 +160,7 @@ const { title } = Astro.props;
 		top: 0px;
 		z-index: 4;
 		background-color: rgb(var(--accent-light));
+		transition: background 0.2s ease-in-out;
 	}
 
 	nav a {

@@ -9,28 +9,21 @@ import Murlock from '../components/Murlock.astro'
 			<h4>
 				OUR GUILD
 			</h4>
-			<div
-				class="description"
-			>
-				<div class="description-outer">
-					<p>
-						We are a Cross Faction Horde guild on <strong>Wyrmrest Accord</strong>! We're a vibrant community of gamers with the shared goal of creating a relaxed and inclusive space for leftists to enjoy World of Warcraft together. Almost all of us are anarchists, communists, socialists, or followers of related left political tendencies. Most of us are LGBTQIA+, and we strive to maintain an environment where our queerness is not only accepted but celebrated.
-					</p>
-					<p>
-						- We raid Thurs. & Mon. 8:30-10:30PM EST, and have cleared AOTC every tier since we started.</li>
-					</p>
-					<p>
-						- We have a "relaxed" (usually Normal difficuly) raid on Sunday, 8-10PM EST</li>
-					</p>
-					<p>
-						- We have a very active M+ community, with many of our players having achieved KSM, and portals this season.</li>
-					</p>
-					<p>
-						- We have semi-regular in-game get togethers with music, dancing, and tons of fun!</li>
-					</p>
-				</div>
-			</div>
-
+			<p>
+				We are a Cross Faction Horde guild on <strong>Wyrmrest Accord</strong>! We're a vibrant community of gamers with the shared goal of creating a relaxed and inclusive space for leftists to enjoy World of Warcraft together. Almost all of us are anarchists, communists, socialists, or followers of related left political tendencies. Most of us are LGBTQIA+, and we strive to maintain an environment where our queerness is not only accepted but celebrated.
+			</p>
+			<p>
+				- We raid Thurs. & Mon. 8:30-10:30PM EST, and have cleared AOTC every tier since we started.</li>
+			</p>
+			<p>
+				- We have a "relaxed" (usually Normal difficuly) raid on Sunday, 8-10PM EST</li>
+			</p>
+			<p>
+				- We have a very active M+ community, with many of our players having achieved KSM, and portals this season.</li>
+			</p>
+			<p>
+				- We have semi-regular in-game get togethers with music, dancing, and tons of fun!</li>
+			</p>
 		</section>
 		<aside class="murlock">
 			<Murlock />
@@ -73,7 +66,7 @@ import Murlock from '../components/Murlock.astro'
 	}
 
 	.guild-info, .guild-news, .murlock {
-		height: 800px;
+		height: 760px;
 	}
 
 	.guild-info, .guild-news {
@@ -88,7 +81,6 @@ import Murlock from '../components/Murlock.astro'
 	}
 
 	.guild-info {
-		background-color: rgb(var(--accent));
 		border: var(--border-width-thick) solid rgb(var(--accent-dark));
 		color:	rgb(var(--accent-dark));
 	}
@@ -101,25 +93,13 @@ import Murlock from '../components/Murlock.astro'
 		align-items: center;
 		justify-content: center;
 		color: rgb(var(--accent-dark));
-		background-color: rgb(var(--accent-light));
 		width: 100%;
+		margin-bottom: 20px;
 	}
 
-	.description {
-		width: 100%;
-		height: 100%;
-		padding: 16px;
-	}
-
-	.description-outer {
-		width: 100%;
-		height: 100%;
-		border: var(--border-width-thick) solid rgb(var(--accent-dark));
-		padding: 16px;
-		background-color: white;
-	}
-
-	.description-outer p {
+	.guild-info p {
+		padding-left: 20px;
+		padding-right: 20px;
 		font-size: 16px;
 		font-weight: 400;
 		padding-bottom: 16px;
@@ -191,7 +171,7 @@ import Murlock from '../components/Murlock.astro'
 			font-size: 5.2cqw;
 		}
 		.guild-info, .guild-news, .murlock {
-			height: 1200px;
+			height: 960px;
 		}
   }
   @media screen and (max-width: 940px) {
